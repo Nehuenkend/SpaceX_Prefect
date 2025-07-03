@@ -1,0 +1,27 @@
+# prefect.yaml
+name: SpaceX Data Pipeline Deployment
+description: A deployment for the SpaceX data pipeline.
+version: 1.0
+
+# Define el punto de entrada a tu flujo
+entrypoint: spacex_pipeline.py:spacex_data_pipeline
+
+# Define un schedule para ejecutar el flujo diariamente
+schedules:
+  - cron: "0 8 * * *" # Todos los días a las 8 AM
+    timezone: "America/Argentina/Buenos_Aires"
+    active: true
+
+# Define los parámetros por defecto para este despliegue
+parameters:
+  limit: 20
+
+# Define etiquetas para organizar tus despliegues
+tags:
+  - "data-ingestion"
+  - "api"
+  - "spacex"
+
+# Define un pool de trabajo
+work_pool:
+  name: default-agent-pool
