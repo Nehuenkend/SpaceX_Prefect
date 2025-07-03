@@ -43,14 +43,12 @@ prefect cloud login
 ## Ejecutar el Flujo Localmente:
 
 ```bash
-
 python spacex_pipeline.py
 ```
 
 ## Aplicar el Despliegue:
 
 ```bash
-
 prefect deploy
 ```
 
@@ -59,6 +57,5 @@ prefect deploy
 Para que las ejecuciones programadas se lleven a cabo, inicia un agente en tu terminal.
 
 ```bash
-
 prefect agent start --pool 'default-agent-pool'
 ```
