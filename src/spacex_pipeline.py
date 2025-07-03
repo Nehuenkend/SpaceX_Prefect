@@ -41,13 +41,13 @@ def process_launch_data(launches: list) -> pd.DataFrame:
 @task
 def store_as_csv(data: pd.DataFrame) -> str:
     """Almacena los datos procesados en un archivo CSV."""
-    filepath = "spacex_launches.csv"
+    filepath = "db/spacex_launches.csv"
     data.to_csv(filepath, index=False)
     return filepath
 
 
 @task
-def store_in_sqlite(data: pd.DataFrame, db_name: str = "spacex.db"):
+def store_in_sqlite(data: pd.DataFrame, db_name: str = "db/spacex.db"):
     """Almacena los datos en una base de datos SQLite."""
     conn = sqlite3.connect(db_name)
     data.to_sql("launches", conn, if_exists="replace", index=False)

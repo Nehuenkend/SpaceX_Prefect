@@ -40,6 +40,8 @@ pip install prefect pandas httpx
 prefect cloud login
 ```
 
+**Desde la carpeta src:**
+
 ## Ejecutar el Flujo Localmente:
 
 ```bash
