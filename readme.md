@@ -28,16 +28,10 @@ Crear un flujo de trabajo de datos que:
 
 ## 🧪 Cómo Ejecutar el Proyecto
 
-## Instalar Prefect y las dependencias:
+## Instalar Prefect y Autenticarse con Prefect Cloud:
 
 ```bash
-pip install prefect pandas httpx
-```
-
-## Autenticarse con Prefect Cloud (recomendado):
-
-```bash
-prefect cloud login
+uvx prefect-cloud login
 ```
 
 **Desde la carpeta src:**
@@ -45,19 +39,19 @@ prefect cloud login
 ## Ejecutar el Flujo Localmente:
 
 ```bash
-python spacex_pipeline.py
+uv run spacex_pipeline.py
 ```
 
-## Aplicar el Despliegue:
+## Aplicar el Deploy de forma remota:
 
 ```bash
-prefect deploy
+uvx prefect-cloud deploy spacex_pipeline.py:spacex_data_pipeline \
+--name spacex_pipeline_deployment \
+--from .
 ```
 
-## Iniciar un Agente:
-
-Para que las ejecuciones programadas se lleven a cabo, inicia un agente en tu terminal.
+## Para correr el WorkFlow de forma remota:
 
 ```bash
-prefect agent start --pool 'default-agent-pool'
+uvx prefect-cloud run main/spacex_pipeline_deployment
 ```
