@@ -1,4 +1,4 @@
-# **🚀 Proyecto Integral de Orquestación de Datos con Prefect: De la Ingesta a la Visualización**
+# **🚀 Proyecto de Orquestación de Datos con Prefect**
 
 Este proyecto demuestra un pipeline de datos utilizando funcionalidades clave de **Prefect**, una moderna plataforma de orquestación de flujos de trabajo.  
 El objetivo es diseñar, desarrollar y mantener un pipeline que:
